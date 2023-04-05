@@ -1,73 +1,67 @@
-Timepicker for Twitter Bootstrap
-=======
-[![Build Status](https://travis-ci.org/jdewit/bootstrap-timepicker.svg?branch=gh-pages)](https://travis-ci.org/jdewit/bootstrap-timepicker)
+# jQuery
 
-A simple timepicker component for Twitter Bootstrap.
+> jQuery is a fast, small, and feature-rich JavaScript library.
 
-Status
-======
-Please take a look at the `CHANGELOG.md` and the issues tab for issues we're
-working on and their relative priorities.
+For information on how to get started and how to use jQuery, please see [jQuery's documentation](http://api.jquery.com/).
+For source files and issues, please visit the [jQuery repo](https://github.com/jquery/jquery).
 
-Installation
-============
+If upgrading, please see the [blog post for 3.2.1](https://blog.jquery.com/2017/03/20/jquery-3-2-1-now-available/). This includes notable differences from the previous version and a more readable changelog.
 
-This project is registered as a <a href="http://bower.io">Bower</a> package,
-and can be installed with the following command:
+## Including jQuery
 
-```bash
-bower install bootstrap-timepicker
+Below are some of the most common ways to include jQuery.
+
+### Browser
+
+#### Script tag
+
+```html
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 ```
 
-You can also download our latest release (and any previous release) 
-<a href="https://github.com/jdewit/bootstrap-timepicker/releases">here</a>.
+#### Babel
 
-Demos & Documentation
-=====================
+[Babel](http://babeljs.io/) is a next generation JavaScript compiler. One of the features is the ability to use ES6/ES2015 modules now, even though browsers do not yet support this feature natively.
 
-View <a href="http://jdewit.github.com/bootstrap-timepicker">demos & documentation</a>.
-
-Support
-=======
-
-If you make money using this timepicker, please consider 
-supporting its development.
-
-<a href="http://www.pledgie.com/campaigns/19125"><img alt="Click here to support bootstrap-timepicker!" src="http://www.pledgie.com/campaigns/19125.png?skin_name=chrome" border="0" target="_blank"/></a> <a class="FlattrButton" style="display:none;" rev="flattr;button:compact;" href="http://jdewit.github.com/bootstrap-timepicker"></a> <noscript><a href="http://flattr.com/thing/1116513/Bootstrap-Timepicker" target="_blank"> <img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" /></a></noscript>
-
-Contributing
-============
-
-1. Install <a href="www.nodejs.org">NodeJS</a> and <a href="www.npmjs.org">Node Package Manager</a>.
-
-2. Install packages
-
-```bash
-npm install
+```js
+import $ from "jquery";
 ```
 
-3. Use <a href="https://github.com/twitter/bower">Bower</a> to get the dev dependencies.
+#### Browserify/Webpack
 
-```bash 
-bower install
+There are several ways to use [Browserify](http://browserify.org/) and [Webpack](https://webpack.github.io/). For more information on using these tools, please refer to the corresponding project's documention. In the script, including jQuery will usually look like this...
+
+```js
+var $ = require("jquery");
 ```
 
-4. Use <a href="www.gruntjs.com">Grunt</a> to run tests, compress assets, etc. 
+#### AMD (Asynchronous Module Definition)
 
-```bash 
-grunt test // run jshint and jasmine tests
-grunt watch // run jsHint and Jasmine tests whenever a file is changed
-grunt compile // minify the js and css files
+AMD is a module format built for the browser. For more information, we recommend [require.js' documentation](http://requirejs.org/docs/whyamd.html).
+
+```js
+define(["jquery"], function($) {
+
+});
 ```
 
-- Please make it easy on me by covering any new features or issues 
-  with <a href="http://pivotal.github.com/jasmine">Jasmine</a> tests.
-- If your changes need documentation, please take the time to update the docs.
+### Node
 
-Acknowledgements
-================
+To include jQuery in [Node](nodejs.org), first install with npm.
 
-Thanks to everyone who have given feedback and submitted pull requests. A 
-list of all the contributors can be found <a href="https://github.com/jdewit/bootstrap-timepicker/graphs/contributors">here</a>.
+```sh
+npm install jquery
+```
 
-Special thanks to @eternicode and his <a href="https://github.com/eternicode/bootstrap-datepicker">Twitter Datepicker</a> for inspiration.
+For jQuery to work in Node, a window with a document is required. Since no such window exists natively in Node, one can be mocked by tools such as [jsdom](https://github.com/tmpvar/jsdom). This can be useful for testing purposes.
+
+```js
+require("jsdom").env("", function(err, window) {
+	if (err) {
+		console.error(err);
+		return;
+	}
+
+	var $ = require("jquery")(window);
+});
+```
