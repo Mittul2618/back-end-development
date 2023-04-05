@@ -1,35 +1,31 @@
 {
-    "name": "bootstrap-timepicker",
-    "description": "A timepicker component for Twitter Bootstrap",
-    "version": "0.5.2",
-    "main": "js/bootstrap-timepicker.js",
-    "license": "MIT",
     "ignore": [
         "**/.*",
-        "_layouts",
+        "builder",
         "node_modules",
-        "_config.yml",
-        "assets",
-        "spec",
-        "index.html",
-        "Gruntfile.js",
-        "package.json",
-        "composer.json"
+        "bower_components",
+        "test",
+        "tests"
     ],
-    "repository": {
-      "type": "git",
-      "url": "https://github.com/jdewit/bootstrap-timepicker"
-    },
-    "dependencies": {
-        "bootstrap": "^3.0",
-        "jquery": "^2.0"
-    },
-    "devDependencies": {
-        "autotype": "https://raw.github.com/mmonteleone/jquery.autotype/master/jquery.autotype.js"
-    },
+    "version": "2.0.0",
+    "name": "Ionicons",
+    "license": "MIT",
+    "authors": [
+        "Ben Sperry <ben@drifty.com>",
+        "Adam Bradley <adam@drifty.com>",
+        "Max Lynch <max@drifty.com>"
+    ],
     "keywords": [
-        "widget",
-        "timepicker",
-        "time"
-    ]
+        "fonts",
+        "icon font",
+        "icons",
+        "ionic",
+        "web font"
+    ],
+    "main": [
+        "css/ionicons.css",
+        "fonts/*"
+    ],
+    "homepage": "https://github.com/driftyco/ionicons",
+    "description": "Ionicons - free and beautiful icons from the creators of Ionic Framework"
 }
